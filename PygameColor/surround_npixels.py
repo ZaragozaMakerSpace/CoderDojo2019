@@ -5,7 +5,7 @@ from pygame.locals import *
 
 #Inicia el modulo pygame
 pygame.init()
-pygame.display.set_caption('Pygame Read surrounding color pixels') 
+pygame.display.set_caption('Pygame Read surrounding n pixels') 
 
 #Iniciamos la ventana de dibujo
 size = [800, 500]

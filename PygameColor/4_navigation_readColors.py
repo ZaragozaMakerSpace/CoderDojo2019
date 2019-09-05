@@ -83,9 +83,9 @@ while True: # main game loop
 			#Actualizamos las variables de las coordenadas
 			actualX = coords[0]
 			actualY = coords[1]
-			print (coords)
+			
 			#Obtenemos el color y dibujamos 
-			read_surroundColors( coords, 15,15 )
+			read_surroundColors( coords, 20,20 )
 			
 
 		if key[ pygame.K_UP] or key[ pygame.K_DOWN  ] or key[ pygame.K_RIGHT  ] or key[ pygame.K_LEFT  ]:
@@ -103,7 +103,7 @@ while True: # main game loop
 				actualX -= 1
 
 			#Leer el color en la nueva coordenada y visualizar pixeles
-			read_surroundColors( (actualX, actualY ), 15,15 )
+			read_surroundColors( (actualX, actualY ), 20,20 )
 			
 		#Evento para cerrar la ventana
 		if event.type == QUIT  or (event.type == KEYDOWN and event.key == K_ESCAPE): 

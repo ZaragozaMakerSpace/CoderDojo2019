@@ -34,7 +34,7 @@ while True: # main game loop
 	# ES MUY IMPORTANTE DISPONER DE UNA OPCION PARA CERRAR LA EJECUCION DEL BUCLE DEL PROGRAMA
 	# En este caso podremos cerrar el programa presionando el boton ESC o presionando la X de la esquina superior de la ventana
 	for event in pygame.event.get():
-		key = pygame.key.get_pressed()
+		#key = pygame.key.get_pressed()
 		
 		#Evento para cerrar la ventana
 		if event.type == QUIT  or (event.type == KEYDOWN and event.key == K_ESCAPE): 
