@@ -16,7 +16,7 @@ Para poder crear más números se utiliza un conjunto de bits ordenados, que ser
 
 Los bits se pueden ordenar con un conjunto de 8 bits a la que denominaremos **Byte** 
 
-![Representacion de bytes](/src/SampleByte.jpg)
+![Representacion de bytes](/BitWise/src/SampleByte.jpg)
 
 #Empezamos a programar
 
@@ -32,7 +32,7 @@ print( 'Numero: ' + str( 0b11001000  ))	#200
 #El inverso
 Para hacer el inverso de un número binario podemos utilizar el símbolo **~**. En teoría el resultado de ejecutar este operador debería corresponder con la siguiente imagen.
 
-![Inverso de un byte](/src/SampleByte.jpg)
+![Inverso de un byte](/BitWise/src/SampleByte.jpg)
 
 En python 
 ```python
@@ -56,7 +56,7 @@ Ahora podemos comprobar que el resultado es correcto a la operación de iversió
 
 Para utilizar los operadores a nivel de bit, necesitamos compararlo respecto a dos bytes. A uno lo llamaremos **code** y al otro lo llamaremos **seed**. Los resultados que nos deberán de aparecer serán los siguientes.
 
-![bit_samples](/src/truthTable.jpg)
+![bit_samples](/BitWise/src/truthTable.jpg)
 
 ```python
 import numpy as np
@@ -85,5 +85,5 @@ Los bits específicos dentro de un número binario, a cada bit se le asigna un n
 #El bit menos significativo [LSB Least Significant Bit](https://es.wikipedia.org/wiki/Bit_menos_significativo)
 
 
-![Índice de un bit](src/IndexSampleByte.jpg)
+![Índice de un bit](/BitWise/src/IndexSampleByte.jpg)
 
