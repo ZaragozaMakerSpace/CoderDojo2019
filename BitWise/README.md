@@ -12,7 +12,7 @@ Para desarrollar los siguientes ejercicios se pueden elegir entre estos dos leng
 
 [Video de bit de la película Tron (1982) ](https://www.youtube.com/watch?v=2OgWHeQ0UlY)
 
-# BitWise Operators
+[# BitWise Operators](https://es.wikipedia.org/wiki/Operador_a_nivel_de_bits)
 
 Lo primero que tenemos que aprender es qué son los operadores a nivel de bit.
 
