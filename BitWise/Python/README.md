@@ -1,4 +1,4 @@
-# Como crear un byte en python
+# ¿Cuántos bits son un byte?
 
 Un [bit](https://es.wikipedia.org/wiki/Bit) es la unidad más pequeña de información que puede contener un sistema digital y solo puede contener **dos estados**.
 
@@ -18,9 +18,9 @@ Los bits se pueden ordenar con un conjunto de **8 bits** a la que denominaremos 
 
 ![Representacion de bytes](/BitWise/src/SampleByte.jpg)
 
-# Empezamos a programar
+# Empezamos a programar en python
 
-- [## Python](https://repl.it/languages/python3) 
+### [Python](https://repl.it/languages/python3) 
 
 Un numero binario, siempre debe acompañarse primero de un **0** y una **b** ( correspondiente a binario ) seguida de la secuencia de **1's** y **0's** de nuestro ejemplo.
 Para hacer aparecer por pantalla la codificación de un numero hay que llamar a la función **print** con la codificación del numero con el metodo [**bin()**](https://wiki.python.org/moin/BitManipulation). Puedes observar a qué número se corresponde con la función **str()**. ¿Cuál es el número máximo que puedes obtener en un byte?
@@ -29,7 +29,7 @@ Para hacer aparecer por pantalla la codificación de un numero hay que llamar a 
 print( 'Byte: ' + bin( 0b11001000 ) )
 print( 'Numero: ' + str( 0b11001000  ))	#200
 ```
-# El inverso
+## El inverso
 Para hacer el inverso de un número binario podemos utilizar el símbolo **~**. En teoría el resultado de ejecutar este operador debería corresponder con la siguiente imagen.
 
 ![Inverso de un byte](/BitWise/src/InverseSampleByte.jpg)
@@ -78,13 +78,16 @@ print( 'XOR: ' + bin( code ^ seed  ))
 ¿Te salen bien los elementos de la imagen de arriba? 
 Si el resultado es correcto, ya has ganado **10 puntos**
 
-# El bit más significativo [MSB Most Significant Bit](https://es.wikipedia.org/wiki/Bit_m%C3%A1s_significativo)
+## El bit más significativo [MSB Most Significant Bit](https://es.wikipedia.org/wiki/Bit_m%C3%A1s_significativo)
 
 MSB ( Most Significant Bit) es el bit que de acuerdo con su posición, se encuentra más a la izquierda
 Los bits específicos dentro de un número binario, a cada bit se le asigna un número de bit, creando un rango desde cero a n.
 
-# El bit menos significativo [LSB Least Significant Bit](https://es.wikipedia.org/wiki/Bit_menos_significativo)
+## El bit menos significativo [LSB Least Significant Bit](https://es.wikipedia.org/wiki/Bit_menos_significativo)
 
 
 ![Índice de un bit](/BitWise/src/IndexSampleByte.jpg)
 
+## Contando bits
+
+Ahora vamos a crear una secuencia de bits más larga. Si utilizamos dos Bytes, entonces tendremos 16 bits para rellenar. Nuestro objetivo es contar cuantos bits activos tenemos en nuestra lista de unos y ceros.

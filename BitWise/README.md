@@ -12,7 +12,7 @@ Para desarrollar los siguientes ejercicios se pueden elegir entre estos dos leng
 
 [Video de bit de la película Tron (1982) ](https://www.youtube.com/watch?v=2OgWHeQ0UlY)
 
-[# BitWise Operators](https://es.wikipedia.org/wiki/Operador_a_nivel_de_bits)
+#[BitWise Operators](https://es.wikipedia.org/wiki/Operador_a_nivel_de_bits)
 
 Lo primero que tenemos que aprender es qué son los operadores a nivel de bit.
 
@@ -25,6 +25,23 @@ Lo primero que tenemos que aprender es qué son los operadores a nivel de bit.
 
 
 ![bit_samples](src/truthTable.jpg)
+
+# Paso a paso, bit a bit
+
+Primero has de elegir el lenguaje con el que vas a crear tus bits.
+
+- [Python](Python/README.md) 
+- [C++](C++/README.md) 
+- [Python Lambda ( Nivel avanzado )](Python/Lambda/README.md) 
+
+Si nunca te han explicado cómo funcionan los operadores a nivel de bit, te proporcionamos unas cuantas páginas de consulta para que puedas aprender por tu cuenta.
+
+- Numeros binarios (https://brilliant.org/wiki/binary-numbers/)
+- Codificación binaria decimal BCD (https://brilliant.org/wiki/binary-coded-decimal-or-bcd/)
+- Puertas lógicas (https://brilliant.org/wiki/logic-gates/)
+- Manipulación de bits (https://brilliant.org/wiki/bit-manipulation-hacks/)
+
+Si lo que necesitas es aprender un poco de Python te recomendamos que consultes la siguiente información.
 
 
 # Ejercicios propuestos
@@ -47,20 +64,4 @@ Dada una secuencia de unos y ceros cualesquiera almacenados en una dirección de
 ![bitWise_Comparison](src/bitwiseComparison.png)
 
 
-# Paso a paso, bit a bit
-
-Primero has de elegir el lenguaje con el que vas a crear tus bits.
-
-- [Python](Python/README.md) 
-- [C++](C++/README.md) 
-- [Python Lambda ( Nivel avanzado )](Python/Lambda/README.md) 
-
-Si nunca te han explicado cómo funcionan los operadores a nivel de bit, te proporcionamos unas cuantas páginas de consulta para que puedas aprender por tu cuenta.
-
-- Numeros binarios (https://brilliant.org/wiki/binary-numbers/)
-- Codificación binaria decimal BCD (https://brilliant.org/wiki/binary-coded-decimal-or-bcd/)
-- Puertas lógicas (https://brilliant.org/wiki/logic-gates/)
-- Manipulación de bits (https://brilliant.org/wiki/bit-manipulation-hacks/)
-
-Si lo que necesitas es aprender un poco de Python te recomendamos que consultes la siguiente información.
 
