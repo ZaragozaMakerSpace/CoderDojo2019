@@ -9,6 +9,9 @@ Para desarrollar los siguientes ejercicios se pueden elegir entre estos dos leng
 - [Python](https://repl.it/languages/python3) 
 - [C++](https://repl.it/languages/cpp) 
 
+
+[Video de bit de la película Tron (1982) ](https://www.youtube.com/watch?v=2OgWHeQ0UlY)
+
 # BitWise Operators
 
 Lo primero que tenemos que aprender es qué son los operadores a nivel de bit.
@@ -24,12 +27,12 @@ Lo primero que tenemos que aprender es qué son los operadores a nivel de bit.
 ![bit_samples](src/truthTable.jpg)
 
 
-
 # Ejercicios propuestos
 
 Dada una secuencia de unos y ceros cualesquiera almacenados en una dirección de memoria. Se pide:
 
-- Position of rightmost set bit. Encontrar la posición del primer bit con valor uno. [5 puntos]. 
+- MSB (Most Significant bit ). Encontrar la posición del primer bit con valor uno. [5 puntos]. 
+- LSB (Least Significant bit ). Encontrar la posición del último bit con valor uno. [5 puntos]. 
 - Position of rightmost zero bit. Encontrar la posición del primer bit con valor cero. [5 puntos]. 
 - Contar cuantos bits son unos. [5 puntos]
 - Encontrar la longitud de 1s que se repiten a partir de la aparicion del primer bit. [8 puntos]
@@ -43,4 +46,21 @@ Dada una secuencia de unos y ceros cualesquiera almacenados en una dirección de
 - Sacar la operación que habría que realizar para obtener el resultado de la siguiente imagen. [12 puntos]
 ![bitWise_Comparison](src/bitwiseComparison.png)
 
+
+# Paso a paso, bit a bit
+
+Primero has de elegir el lenguaje con el que vas a crear tus bits.
+
+- [Python](Python/README.md) 
+- [C++](C++/README.md) 
+- [Python Lambda ( Nivel avanzado )](Python/Lambda/README.md) 
+
+Si nunca te han explicado cómo funcionan los operadores a nivel de bit, te proporcionamos unas cuantas páginas de consulta para que puedas aprender por tu cuenta.
+
+- Numeros binarios (https://brilliant.org/wiki/binary-numbers/)
+- Codificación binaria decimal BCD (https://brilliant.org/wiki/binary-coded-decimal-or-bcd/)
+- Puertas lógicas (https://brilliant.org/wiki/logic-gates/)
+- Manipulación de bits (https://brilliant.org/wiki/bit-manipulation-hacks/)
+
+Si lo que necesitas es aprender un poco de Python te recomendamos que consultes la siguiente información.
 
