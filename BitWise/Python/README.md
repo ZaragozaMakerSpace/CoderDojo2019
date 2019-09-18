@@ -16,7 +16,11 @@ Para poder crear más números se utiliza un conjunto de bits ordenados, que ser
 
 Los bits se pueden ordenar con un conjunto de 8 bits a la que denominaremos **Byte** 
 
-![Representacion de bytes](src/SampleByte.jpg)
+![Representacion de bytes](/src/SampleByte.jpg)
+
+#Empezamos a programar
+
+- [##Python](https://repl.it/languages/python3) 
 
 Un numero binario, siempre debe acompañarse primero de un 0 y una b ( correspondiente a binario ) seguida de la secuencia de 1's y 0's de nuestro ejemplo.
 Para hacer aparecer por pantalla la codificación de un numero hay que llamar a la función print con la codificación del numero con el metodo [bin()](https://wiki.python.org/moin/BitManipulation). Puedes observar a qué número se corresponde con la función str(). ¿Cuál es el número máximo que puedes obtener en un byte?
@@ -28,7 +32,7 @@ print( 'Numero: ' + str( 0b11001000  ))	#200
 #El inverso
 Para hacer el inverso de un número binario podemos utilizar el símbolo **~**. En teoría el resultado de ejecutar este operador debería corresponder con la siguiente imagen.
 
-![Inverso de un byte](src/SampleByte.jpg)
+![Inverso de un byte](/src/SampleByte.jpg)
 
 En python 
 ```python
@@ -52,7 +56,7 @@ Ahora podemos comprobar que el resultado es correcto a la operación de iversió
 
 Para utilizar los operadores a nivel de bit, necesitamos compararlo respecto a dos bytes. A uno lo llamaremos **code** y al otro lo llamaremos **seed**. Los resultados que nos deberán de aparecer serán los siguientes.
 
-![bit_samples](src/truthTable.jpg)
+![bit_samples](/src/truthTable.jpg)
 
 ```python
 import numpy as np

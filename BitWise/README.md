@@ -6,8 +6,8 @@ Vamos a bajar a nivel de bit y vamos a aprender cómo desarrollar con grupos de 
 En estos ejercicios se valorarán las soluciones que se puedan integrar en pocas lineas de código. Cada uno de los ejercicios tiene una puntuación que puede variar en función de la dificultad. El objetivo es conseguir la máxima puntuación. 
 
 Para desarrollar los siguientes ejercicios se pueden elegir entre estos dos lenguajes de programación.
-- [Python](https://repl.it/languages/python3) 
-- [C++](https://repl.it/languages/cpp) 
+- [Python](Python/README.md) 
+- [C++](C++/README.md) 
 
 
 [Video de bit de la película Tron (1982) ](https://www.youtube.com/watch?v=2OgWHeQ0UlY)
