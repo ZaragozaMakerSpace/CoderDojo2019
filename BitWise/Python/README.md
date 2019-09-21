@@ -201,7 +201,7 @@ print( 'RGB888 Color: ' + bin( code) )
 ```
 Podemos usar el siguiente enlace [COLORES](https://htmlcolorcodes.com/es/) para observar el resultado que debemos obtener. En el programa anterior obtendremos el siguiente color.
 
-![Color_Sample](ColorSample.png)
+![Color_Sample](/BitWise/src/ColorSample.png)
 
 Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits RGB888.
 
@@ -220,7 +220,7 @@ print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) )
 ```
 Para realizar este ejercicio, hay que saber desplazar los bits y eliminar la parte que no nos interesa del código. Partimos de un numero de 32 bits como aparece en la figura y hemos de realizar la siguiente conversión.
 
-![RGB888](RGB888.jpg)
+![RGB888](/BitWise/src/RGB888.jpg)
 
 Recuerda que no existe una única solución.
 
