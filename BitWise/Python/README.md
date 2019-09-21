@@ -252,6 +252,8 @@ code = BitColor( r, g, b )
 print( 'RGB565 Color: ' + bin( code) ) 
 ```
 
+![RGB565](/BitWise/src/RGB565.jpg)
+
 Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits.
 
 ```python
@@ -268,7 +270,27 @@ b = 0
 print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) ) 
 ```
 
-##Conversor Hexadecimal
+## Conversor Hexadecimal
 
-Para finalizar estas pruebas, vamos a convertir estos códigos en formato hexadecimal.
+Para finalizar estas pruebas, vamos a convertir estos códigos en formato hexadecimal, ya que los colores suelen interpetrarse con un valor hexadecimal.
 
+Para realizar este cambio solamente tendremos que usar el método**hex()** paraa obtener el código en en **base 16**.
+
+```python
+import numpy as np
+code = np.uint16( 0b111111110111100001000011 )
+    	
+print( hex( code ) ) 
+```
+
+## Por qué hay 6 bits para el color verde y solo 5 para el rojo y el azul
+
+La respuesta a esta pregunta reside en que los ordenadores operan con **bytes** que son **paquetes de 8 bits**. En el caso de la traducción al color conviene que sea el menor número de bytes, ya que los sistemas de imagen utilizan un valor de color para cada pixel de nuestra pantalla y para optimizar memoria requiere que cada configuracion de color no ocupe demasiado.
+
+Dos bytes son 16 bits que no es divisible por 3 en partes iguales, y para aprovechar toda la información debemos ocupar ese **bit perdido** a uno de las 3 componentes de color. ¿Pero a cual?
+
+La respuesta reside en que [**nuestro ojo humano es mas sensible en la variación del color verde**](https://en.wikipedia.org/wiki/CIE_1931_color_space) respecto a las del color rojo y azul. Tal y como se ve en la figura, podemos observar la gama de colores y el color verde por longitudes de onda ocupa un mayor area. 
+
+Al disponer de un bit adicional, podemos guardar más información contenida en el verde con respecto a los otros dos colores y adaptar las imágenes con mayor calidad adaptada a nuestros ojos.
+
+![Color Cones Response](/BitWise/src/colorCones.png)
