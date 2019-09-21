@@ -49,13 +49,12 @@ Si lo que necesitas es aprender un poco de **Python** te recomendamos que consul
 Dada una secuencia de unos y ceros cualesquiera almacenados en una dirección de memoria. Se pide:
 
 
-- Contar cuantos bits son unos. [10 puntos]
-- Detectar que un número es impar mediante operaciones con bits. [5 puntos]
+- Contar cuantos bits son unos. [15 puntos]
+- Detectar que un número es impar mediante operaciones con bits. [10 puntos]
 - MSB (Most Significant bit ). Encontrar la posición del primer bit con valor uno. [10 puntos]. 
 - LSB (Least Significant bit ). Encontrar la posición del último bit con valor uno. [10 puntos]. 
-- Position of rightmost zero bit. Encontrar la posición del primer bit con valor cero. [5 puntos]. 
-- Encontrar la longitud de 1s que se repiten a partir de la aparicion del primer bit. [10 puntos]
-- Dibujar un emoticono por pantalla de 10 filas y 10 columnas con unos y ceros usando bits. [15 puntos]
-- Obtener la operación que habría que realizar para obtener el resultado de la siguiente imagen. [15 puntos]
+- Codificación de formato de color RGB888. [15 puntos]
+- Codificación de formato de color RGB565. [20 puntos]
+- Obtener la operación que habría que realizar para obtener el resultado de la siguiente imagen. [20 puntos]
 ![bitWise_Comparison](src/bitwiseComparison.png)
-- \*Desplazamiento circular. Cuando se desplaza un bit, se pierde información en uno de los extremos. El desplazamiento circular se basa en recuperar la información perdida en un extremo para que aparezca en el extremo contrario. [20 puntos]
+- \*Desplazamiento circular. Cuando se desplaza un bit, se pierde información en uno de los extremos. El desplazamiento circular se basa en recuperar la información perdida en un extremo para que aparezca en el extremo contrario. [+20 puntos]

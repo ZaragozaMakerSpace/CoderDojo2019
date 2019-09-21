@@ -162,8 +162,113 @@ Los bits específicos dentro de un número binario, a cada bit se le asigna un n
 ## El bit menos significativo [LSB Least Significant Bit](https://es.wikipedia.org/wiki/Bit_menos_significativo)
 
 
-
-
 Ahora vamos a crear una secuencia de bits más larga. Si utilizamos dos Bytes, entonces tendremos 16 bits para rellenar. Nuestro objetivo es contar cuantos bits activos tenemos en nuestra lista de unos y ceros.
 
-## Tengo un mensaje para bit
+## Bit Color
+
+Uno de los secretos más codiciados de los bits es su codificación para representar unidades de información más grandes. Incluso podemos ocultar información oculta de forma matemática si sabemos manipularlos.
+
+Una de las aplicaciones más divertidas es la **codificación de bits en colores**. Muchas de las pantallas que utilizamos disponen de un procesador que introduce la información de color en cada pixel para poder visualizar imágenes. Por lo que la unidad más pequeña que es el bit se transforma en algo mucho más grande.
+
+Para realizar y programar gráficos en robótica utilizamos muchas veces pantallas TFT que podemos controlar a través de una librería especial para crear dibujos. Pero las pantallas requieren de mucha potencia de procesamiento.
+
+Una forma de codificar colores es la conocida como [RGB ( RED , GREEN, BLUE )](https://es.wikipedia.org/wiki/RGB), que son 3 números con un valor máximo de **255**.
+
+Su valor máximo es **255**, ya que para cada fragmento de color requiere de **1 byte = 2⁸ = 256**.
+
+## RGB888
+
+Por esa regla de 3, para representar cualquier combinación de color con estos 3 colores necesitaremos **3 bytes** o lo que es lo mismo 24 bits de información.
+
+Con el siguiente código conseguiremos transformar un código de color RGB en formato binario. 
+En este caso, usaremos un número entero para cada componente de 0 a 255 y debemos observar que internamente siguen siendo bits al usar operadores binarios.
+
+```python
+import numpy as np
+code = np.uint32( )
+
+r = 255
+g = 120
+b = 67
+
+#Función que transforma codificación RGB en bits
+def  BitColor( r, g, b ): 
+	return r <<16 | g << 8 | b
+    	
+#Ejecutamos la funcion anterior asociada a nuestro numero
+code = BitColor( r, g, b )
+print( 'RGB888 Color: ' + bin( code) ) 
+```
+Podemos usar el siguiente enlace [COLORES](https://htmlcolorcodes.com/es/) para observar el resultado que debemos obtener. En el programa anterior obtendremos el siguiente color.
+
+![Color_Sample](ColorSample.png)
+
+Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits RGB888.
+
+```python
+import numpy as np
+code = np.uint32( 0b111111110111100001000011 )
+
+r = np.uint8( ) #255
+g = np.uint8( ) #120
+b = np.uint8( ) #67
+
+# Escribe las instrucciones para obtener los valores anteriores a partir de la codificación de color binaria
+#
+    	
+print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) ) 
+```
+Para realizar este ejercicio, hay que saber desplazar los bits y eliminar la parte que no nos interesa del código. Partimos de un numero de 32 bits como aparece en la figura y hemos de realizar la siguiente conversión.
+
+![RGB888](RGB888.jpg)
+
+Recuerda que no existe una única solución.
+
+
+## RGB565
+
+Podemos hacer una reducción de esta codificación usando solo **2 bytes** mediante la codificación [**RGB565**](http://www.barth-dev.de/online/rgb565-color-picker/) con solo **16 bits** de información. Como podemos ver en la imagen, los 5 primeros bits corresponden al color **rojo**, los 6 de en medio corresponden al color **verde** y los 5 bits restantes corresponden al color **azul**. La conversión para pasar de codificación RGB888 a RGB565 se hace seleccionando unos bits determinados.
+
+![RGB888](/BitWise/src/rgb888.jpg)
+
+![RGB565](/BitWise/src/rgb565.jpg)
+
+En la siguiente prueba deberás convertir el siguiente código RGB en formato binario de la misma manera que hemos realizado en el programa anterior, pero ahora debemos seleccionar nuestros bits de manera adecuada.
+
+```python
+import numpy as np
+code = np.uint16( )
+
+r = 255
+g = 120
+b = 67
+
+#Función que transforma codificación RGB en bits
+def  BitColor( r, g, b ): 
+	return r | g | b
+    	
+#Ejecutamos la funcion anterior asociada a nuestro numero
+code = BitColor( r, g, b )
+print( 'RGB565 Color: ' + bin( code) ) 
+```
+
+Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits.
+
+```python
+import numpy as np
+code = np.uint16( 0b111111110111100001000011 )
+
+r = 0
+g = 0
+b = 0
+
+# Escribe la instrucción para obtener los valores anteriores a partir de la codificación de color binaria
+#
+    	
+print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) ) 
+```
+
+##Conversor Hexadecimal
+
+Para finalizar estas pruebas, vamos a convertir estos códigos en formato hexadecimal.
+
