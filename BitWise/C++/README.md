@@ -18,37 +18,64 @@ Con todos estos bytes podemos formados por ceros y unos podemos representar cual
 [**Conversor binario a decimal**](https://calculadorasonline.com/calculadora-binaria/)
 En el siguiente [**enlace**](https://es.wikihow.com/convertir-binario-a-decimal) se puede observar paso a paso como se puede convertir un número binario a decimal.
 
-# [Empezamos a programar en python](https://repl.it/languages/python3) 
+# [Empezamos a programar en C++](https://repl.it/languages/cpp) 
 
-### [Haz **Click aquí** para programar en Python](https://repl.it/languages/python3) 
+**Has elegido el lenguaje de C++**. Este lenguaje es el más apropiado para crear **robots** y es el lenguaje con el que podrás aprender a usar **Arduino**. Si te gusta la **robótica** puedes consultar nuestro [curso de robótica con **Arduino**](https://github.com/ZGZMakerSpace/ArduinoCourse) en el siguiente [enlace](https://zaragozamakerspace.com/index.php/courses/curso-basico-arduino/).
+
+### [Haz **Click aquí** para programar en C++](https://repl.it/languages/cpp) 
 
 Un **numero binario**, siempre debe acompañarse primero de un **0** y una **b** ( correspondiente a **binario** ) seguida de la secuencia de **1's** y **0's** de nuestro ejemplo.
-Para hacer aparecer por pantalla la codificación de un numero hay que llamar a la función **print** con la codificación del numero con el metodo [**bin()**](https://wiki.python.org/moin/BitManipulation). Puedes observar a qué número se corresponde con la función **str()**. ¿Cuál es el número máximo que puedes obtener en un byte?
+Para hacer aparecer por pantalla la codificación de un numero hay que llamar a la función **print** con la codificación del numero con el metodo [**bin()**](https://www.cprogramming.com/tutorial/bitwise_operators.html). Puedes observar a qué número se corresponde con la función **str()**. ¿Cuál es el número máximo que puedes obtener en un byte?
 
-```python
-print( 'Byte: ' + bin( 0b11001000 ) )
-print( 'Numero: ' + str( 0b11001000  ))	#200
+```cpp
+#include <iostream>
+#include <bitset>
+
+unsigned int x = { 0b11001000 };
+
+int main() {
+  
+  std::cout << "Byte: " << std::bitset<8>(x) << "\n";
+  std::cout << "Numero: " << x;
+  
+}
 ```
 ## El inverso
 Para hacer el inverso de un número binario podemos utilizar el símbolo **~**. En teoría el resultado de ejecutar este operador debería corresponder con la siguiente imagen.
 
 ![Inverso de un byte](/BitWise/src/InverseSampleByte.jpg)
 
-```python
-code =  0b11001000
-print( 'Byte: ' + bin( ~code ) )	#-0b11001001
-print( 'Numero: ' + str( ~code  )) 	#-201 ?¿?¿
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
+
+uint8_t x = { 0b11001000 };
+
+int main() {
+  
+  std::cout << "Byte: " << std::bitset<8>(~x) << "\n";  //00110111
+  std::cout << "Numero: " << ~x;     //-201 ¿?
+  
+}
 ```
 
-Esta solución no es la correcta y se debe a que el número que hemos introducido contiene una codificación que afecta también a los números negativos. Para solucionar este caso vamos a crear un número **unsigned int de 8 bits** con la librería [**numpy**](https://numpy.org/). [**Numpy**](https://numpy.org/) es una librería muy útil para realizar cálculos numéricos en Python con una extensión completa para realizar matemáticas.
+Esta solución no es la correcta y se debe a que el número que hemos introducido contiene una codificación que afecta también a los números negativos. Para solucionar este caso vamos a definir el rango de los números enteros a enteros po
 
 
-```python
-import numpy as np
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-code = np.uint8( 0b11001000 )
-print( 'Byte: ' + bin( ~code ) )	#0b110111
-print( 'Numero: ' + str( ~code  ))	#55
+uint8_t x = { 0b11001000 };
+
+int main() {
+  
+  std::cout << "Byte: " << std::bitset<8>(~x) << "\n";
+  std::cout << "Numero: " << uint8_t(~x);
+  
+}
 ```
 
 Ahora podemos comprobar que el resultado es correcto a la **operación de inversión**. Los ceros a la izquierda no tienen relevancia.
@@ -57,17 +84,20 @@ Para utilizar los operadores a nivel de bit, necesitamos comparar uno respecto d
 
 ![bit_samples](/BitWise/src/truthTable.jpg)
 
-```python
-import numpy as np
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-code = np.uint8( 0b11001000 )
-seed = np.uint8( 0b01101101 )
-
-print( 'Code: ' + bin( code ) )
-print( 'seed: ' + bin( seed ) )
-print( 'AND: ' + bin( code & seed  ))
-print( 'OR: ' + bin( code | seed  ))
-print( 'XOR: ' + bin( code ^ seed  ))
+uint8_t code = { 0b11001000 };
+uint8_t seed = { 0b01101101 };
+int main() {
+  std::cout << "Code: " << std::bitset<8>( code  ) << "\n";
+  std::cout << "Seed: " << std::bitset<8>( seed ) << "\n";
+  std::cout << "AND: " << std::bitset<8>( code & seed ) << "\n";
+  std::cout << "OR: " << std::bitset<8>( code | seed ) << "\n";
+  std::cout << "XOR: " << std::bitset<8>( code ^ seed ) << "\n";  
+} 
 ```
 
 ¿Sabrías decir cuál es el resultado de las siguientes operaciones?
@@ -84,14 +114,18 @@ Dentro de una secuencia de bits podemos desplazar todos los bits hacia la izquie
 
 Este desplazamiento es el equivalente a multiplicar o dividir por una potencia de **2 elevado a n**, siendo **n** el numero de desplazamientos.
 
-```python
-import numpy as np
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-code = np.uint8( 0b11001000 )
+uint8_t code = { 0b11001000 };
 
-print( 'Code: ' + str( code ) +' - '+ bin( code ) )
-print( 'Multiplicar por 2: ' + str( code << 1 ) +' - '+ bin( code << 1 ))
-print( 'Divide por 2: ' + str( code >> 1 ) +' - '+ bin( code >> 1 ))
+int main() {
+  std::cout << int(code) << "\n";
+  std::cout << "Multiplicar por 2: " << int(code << 1) << " " << std::bitset<8>( code <<1 ) << "\n";
+  std::cout << "Divide por 2 : " << int(code  >> 1 )<< " "  << std::bitset<8>( code >> 1 ) << "\n"; 
+} 
 ```
 Hay que tener en cuenta que en la lista de bits, la posición que ocupa el bit que aparece por la izquierda o por la derecha es un cero.
 
@@ -100,55 +134,76 @@ Hay que tener en cuenta que en la lista de bits, la posición que ocupa el bit q
 Para contar bits, una acción que podemos realizar es realizar un **bucle** y desplazar el bit hacia la derecha hasta que se acaba. 
 
 
-```python
-import numpy as np
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-code = np.uint8( 0b11001000 )
-#Guardamos el numero de bits activos en una variable contador.
-count = 0
-while (code): #Mientras el numero binario no sea cero ejecuta el bucle
-  count += code & 1
-  code >>= 1
-print( 'Total de bits activos: '+count )
+uint8_t code = { 0b11001000 };
+
+int main() {
+
+  int count = 0;
+  while (code){
+    count += code & 1;
+    code >>= 1;
+  }
+
+  std::cout << "Total de bits activos: " << int(count) << " " ;
+} 
 ```
 Si prestamos atención, este programa afecta al valor total de nuestro código, ya que vamos eliminando información sobreescribiendo sobre él.
 
 Muchas veces es útil desarrollar una función que nos pueda devolver el resultado que estamos buscando sin alterar esta variable.
 
-Para crear una **función en Python**, debemos especificar la palabra **def** seguida de un nombre para la función. 
+Para crear una **función en C++**, debemos especificar la palabra **def** seguida de un nombre para la función. 
 
-```python
-import numpy as np
-code = np.uint8( 0b11001000 )
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-#Declaracion de una funcion para contar Bits
-def  contarBits(n): 
-    count = 0
-    while (n): 
-        count += n & 1
-        n >>= 1
-    return count 
+uint8_t code = { 0b11001000 };
 
-#Ejecutamos la funcion anterior asociada a nuestro numero
-print( 'Total de bits activos: '+ str( contarBits( code ) ))
+int contarBits( int n ){
+  int count = 0;
+  while (code){
+    count += code & 1;
+    code >>= 1;
+  }
+  return count;
+}
+
+int main() {
+
+  std::cout << "Total de bits activos: " << int ( contarBits( code ) );
+} 
 ```
 Existe un formato de **ejecución de funciones** denominado **recursivo**. Este modelo permite ejecutarse una función a si misma hasta que deja de cumplir una condición determinada.
 Aunque pueda parecer más difícil es una forma inteligente de encapsular ciertas operaciones para obtener un resultado más rápido.
 
-```python
-import numpy as np
-code = np.uint8( 0b11001000 )
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-#Declaracion de una funcion recursiva para contar Bits
-def  contarBits(n): 
-    if (n != 0): 
-    	#Su salida es la suma de un bit activo mas la ejecucion de si misma desplazada un bit
-      return (n & 1) + contarBits(n >> 1) 
-    else: 
-    	return 0
-    	
-#Ejecutamos la funcion anterior asociada a nuestro numero
-print( 'Total de bits activos: '+ str( contarBits( code ) ))
+uint8_t code = { 0b11001000 };
+
+int contarBits( int n ){
+  int count = 0;
+  if (n != 0){
+    //Su salida es la suma de un bit activo mas la ejecucion de si misma desplazada un bit
+      
+    return (n & 1) + contarBits(n >> 1) ;
+  }else{
+    return 0;
+  }
+}
+
+int main() {
+
+  std::cout << "Total de bits activos: " << int ( contarBits( code ) );
+} 
 ```
 
 ## Bit Color
@@ -170,21 +225,25 @@ Por esa regla de 3, para representar cualquier combinación de color con estos 3
 Con el siguiente código conseguiremos transformar un código de color RGB en formato binario. 
 En este caso, usaremos un número entero para cada componente de 0 a 255 y debemos observar que internamente siguen siendo bits al usar operadores binarios.
 
-```python
-import numpy as np
-code = np.uint32( )
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-r = 255
-g = 120
-b = 67
+uint32_t code;
 
-#Función que transforma codificación RGB en bits
-def  BitColor( r, g, b ): 
-	return r <<16 | g << 8 | b
-    	
-#Ejecutamos la funcion anterior asociada a nuestro numero
-code = BitColor( r, g, b )
-print( 'RGB888 Color: ' + bin( code) ) 
+uint8_t r = 255;
+uint8_t g = 120;
+uint8_t b = 67;
+
+uint32_t BitColor( uint8_t r , uint8_t g , uint8_t b  ){
+  return r <<16 | g << 8 | b;
+}
+
+int main() {
+  code = BitColor( r, g, b );
+  std::cout << "RGB888 Color: " << std::bitset<24> ( code ) ;
+} 
 ```
 Podemos usar el siguiente enlace [COLORES](https://htmlcolorcodes.com/es/) para observar el resultado que debemos obtener. En el programa anterior obtendremos el siguiente color.
 
@@ -192,18 +251,21 @@ Podemos usar el siguiente enlace [COLORES](https://htmlcolorcodes.com/es/) para 
 
 Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits RGB888.
 
-```python
-import numpy as np
-code = np.uint32( 0b111111110111100001000011 )
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-r = np.uint8( ) #255
-g = np.uint8( ) #120
-b = np.uint8( ) #67
+uint32_t code = { 0b111111110111100001000011 };
 
-# Escribe las instrucciones para obtener los valores anteriores a partir de la codificación de color binaria
-#
-    	
-print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) ) 
+uint8_t r; // = 255;
+uint8_t g; // = 120;
+uint8_t b; // = 67;
+
+int main() {
+  // Escribe las instrucciones para obtener los valores anteriores a partir de la codificación de color binaria
+  std::cout << "RGB888 Color - r:" << r << " g:"<< g << " b: " << b  ;
+} 
 ```
 Para realizar este ejercicio, hay que saber desplazar los bits y eliminar la parte que no nos interesa del código. Partimos de un numero de 32 bits como aparece en la figura y hemos de realizar la siguiente conversión.
 
@@ -222,49 +284,56 @@ Podemos hacer una reducción de esta codificación usando solo **2 bytes** media
 
 En la siguiente prueba deberás convertir el siguiente código RGB en formato binario de la misma manera que hemos realizado en el programa anterior, pero ahora debemos seleccionar nuestros bits de manera adecuada.
 
-```python
-import numpy as np
-code = np.uint16( )
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-r = 255
-g = 120
-b = 67
+uint16_t code;
 
-#Función que transforma codificación RGB en bits
-def  BitColor( r, g, b ): 
-	return (r >> 3)<< 11 | (g >>2) << 5 | (b >> 3 )
-    	
-#Ejecutamos la funcion anterior asociada a nuestro numero
-code = BitColor( r, g, b )
-print( 'RGB565 Color: ' + bin( code) ) 
+uint8_t r = 255;
+uint8_t g = 120;
+uint8_t b = 67;
+
+uint32_t BitColor( uint8_t r , uint8_t g , uint8_t b  ){
+  return (r >> 3)<< 11 | (g >>2) << 5 | (b >> 3 );
+}
+
+int main() {
+  code = BitColor( r, g, b );
+  std::cout << "RGB565 Color: " << std::bitset<16> ( code ) ;
+} 
+
 ```
 
 ![RGB565](/BitWise/src/RGB565.png)
 
 Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits. ¿Nos saldrán los mismos valores que en la codificación **RGB888** ?
 
-```python
-import numpy as np
-code = np.uint16( 0b1111101111001000 )
+```cpp
+#include <iostream>
+#include <stdint.h>
+#include <bitset>
 
-r = 0
-g = 0
-b = 0
+uint16_t code = { 0b1111101111001000 } ;
 
-# Escribe la instrucción para obtener los valores anteriores a partir de la codificación de color binaria
-#
-r = code >> 11
-print( bin(r) )
+uint8_t r = 0;
+uint8_t g = 0;
+uint8_t b = 0;
 
-code = code & 0b11111111111 # 11 bits - 00000 111111 00000 
-g = code >> 6
-print( bin(g) )
 
-code = code & 0b11111
-b = code
-print( bin(b) )
-        
-print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) ) 
+int main() {
+  
+  r = (code >> 11);
+  std::cout << int(r) <<"\n";
+  code = code & 0b11111111111 ;
+  std::cout << code <<"\n";
+  g = code >> 6;
+  code = code & 0b11111;
+  b = code;
+
+  std::cout << "RGB888 Color - r:" << int(r) << " g:"<< int(g) << " b: " << int(b)  ;
+} 
 ```
 
 La respuesta es que **no nos pueden dar los mismos valores que en el modo de codificación RGB888**, ya que perdemos bits de información, por lo que esos bits perdidos los desconocemos para determinar el valor total de cada componente de color.
@@ -275,11 +344,16 @@ Para finalizar estas pruebas, vamos a convertir estos códigos en formato hexade
 
 Para realizar este cambio solamente tendremos que usar el método**hex()** paraa obtener el código en en **base 16**.
 
-```python
-import numpy as np
-code = np.uint16( 0b111111110111100001000011 )
-    	
-print( hex( code ) ) 
+```cpp
+#include <iostream>
+#include <stdint.h>
+
+uint16_t code = { 0b1111101111001000 } ;
+
+int main() {
+
+  std::cout << "RGB888 Color : 0x" << std::hex << code ;
+} 
 ```
 
 ## Por qué hay 6 bits para el color verde y solo 5 para el rojo y el azul
