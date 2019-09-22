@@ -5,23 +5,27 @@ Vamos a bajar a **nivel de bit** y vamos a aprender cómo desarrollar con grupos
 
 En estos ejercicios se valorarán las soluciones que se puedan integrar en pocas lineas de código. Cada uno de los ejercicios tiene una puntuación que puede variar en función de la dificultad. El objetivo es conseguir la máxima puntuación. 
 
-Para desarrollar los siguientes ejercicios se pueden elegir entre estos dos lenguajes de programación.
-- [**Python**](Python/README.md) 
-- [**C++**](C++/README.md) 
+Para desarrollar los siguientes ejercicios se pueden elegir entre estos dos lenguajes de programación. **Elige uno**
+- ### [Python](Python/README.md) 
+- ### [C++](C++/README.md) 
 
 
-[Video de bit de la película Tron (1982) ](https://www.youtube.com/watch?v=2OgWHeQ0UlY)
+### Haz click sobre la imagen para ver a BIT en la película de Tron (1982)
+
+[![TRON_Bit](src/TronBIT.jpg)](https://www.youtube.com/watch?v=2OgWHeQ0UlY)
+
+
 
 # [BitWise Operators](https://es.wikipedia.org/wiki/Operador_a_nivel_de_bits)
 
 Lo primero que tenemos que aprender es qué son los operadores a nivel de bit.
 
-- **&**  --> El operador **AND**. Al comparar dos bits, el resultado es un bit activo solo si los dos bits están activos. 
-- |**  --> El operador **OR** . Al comparar dos bits, el bit resultado esta activo si al menos uno de ellos también esta activo. 
-- **^**  --> Operador **XOR**.
+- **&**  --> El operador [**AND**](https://es.wikipedia.org/wiki/Conjunci%C3%B3n_l%C3%B3gica). Al comparar dos bits, el resultado es un bit activo solo si los dos bits están activos. 
+- |**  --> El operador [**OR**](https://es.wikipedia.org/wiki/Disyunci%C3%B3n_l%C3%B3gica) . Al comparar dos bits, el bit resultado esta activo si al menos uno de ellos también esta activo. 
+- **^**  --> Operador [**XOR**](https://es.wikipedia.org/wiki/Disyunci%C3%B3n_exclusiva).
 - **~**  --> **Negacion** de bit. Devuelve el valor opuesto de su bit.
-- **`>>`** --> Desplazamiento a la derecha.
-- **<<** --> Desplazamiento a la izquierda.
+- **`>>`** --> [Desplazamiento](https://en.wikipedia.org/wiki/Logical_shift) a la derecha.
+- **<<** --> [Desplazamiento](https://en.wikipedia.org/wiki/Logical_shift) a la izquierda.
 
 
 ![bit_samples](src/truthTable.jpg)
@@ -30,9 +34,9 @@ Lo primero que tenemos que aprender es qué son los operadores a nivel de bit.
 
 Primero has de elegir el lenguaje con el que vas a crear tus bits.
 
-- [Python](Python/README.md) 
-- [C++](C++/README.md) 
-- [Python Lambda ( Nivel avanzado )](Python/Lambda/README.md) 
+**Elige un lenguaje de programación**
+- ### [Python](Python/README.md) 
+- ### [C++](C++/README.md) 
 
 Si nunca te han explicado cómo funcionan los operadores a nivel de bit, te proporcionamos unas cuantas páginas de consulta para que puedas aprender por tu cuenta.
 
@@ -41,7 +45,7 @@ Si nunca te han explicado cómo funcionan los operadores a nivel de bit, te prop
 - **Puertas lógicas** (https://brilliant.org/wiki/logic-gates/)
 - **Manipulación de bits** (https://brilliant.org/wiki/bit-manipulation-hacks/)
 
-Si lo que necesitas es aprender un poco de **Python** te recomendamos que consultes la siguiente información.
+Si lo que necesitas es aprender un poco de **Python** te recomendamos que consultes la siguiente [página con **cursos de Python gratuitos**](https://www.datacamp.com/courses/intro-to-python-for-data-science).
 
 
 # Ejercicios propuestos

@@ -1,11 +1,11 @@
 # CoderDojo2019
 Repositorio de publicación de sesiones CoderDojo de Zaragoza Maker Space.
 
-- ### [BitWise](BitWise).
-- ### [Pixel by Pixel](PygameColor).
-- ### [PyPyGame](https://pages.github.com/).
-- ### [User Interface](MyWebPage).
-- ### [SQlite](SQlito).
+1. ### [BitWise](BitWise)
+2. ### [Pixel by Pixel](PygameColor)
+3. ### [PyPyGame](https://pages.github.com/)
+4. ### [User Interface](MyWebPage)
+5. ### [SQlite](SQlito)
 
 ![ZMS_Coder_Dojo](ZMS_CoderDojo.png)
 

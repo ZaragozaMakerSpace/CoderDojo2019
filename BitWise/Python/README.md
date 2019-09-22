@@ -7,22 +7,22 @@ Un [bit](https://es.wikipedia.org/wiki/Bit) es la unidad más pequeña de inform
 - Activo o inactivo
 - Encendido o apagado
 
-
-[## Video de bit de la película Tron (1982) ](https://www.youtube.com/watch?v=2OgWHeQ0UlY)
-
-
 Para poder crear más números se utiliza un conjunto de bits ordenados, que serán representados por un **número binario**, convirtiendo su escala a un **sistema decimal** que es el que solemos utilizar para realizar cálculos.
 
 
-Los bits se pueden ordenar con un conjunto de **8 bits** a la que denominaremos **Byte** 
+Los bits se pueden ordenar con un conjunto de **8 bits** a la que denominaremos **Byte**.
 
 ![Representacion de bytes](/BitWise/src/SampleByte.jpg)
 
-# Empezamos a programar en python
+Con todos estos bytes podemos formados por ceros y unos podemos representar cualquier tipo de dato en nuestro ordenador, números , letras incluso colores. Solamente hay que saber codificar este tipo de información. 
+[**Conversor binario a decimal**](https://calculadorasonline.com/calculadora-binaria/)
+En el siguiente [**enlace**](https://es.wikihow.com/convertir-binario-a-decimal) se puede observar paso a paso como se puede convertir un número binario a decimal.
+
+# [Empezamos a programar en python](https://repl.it/languages/python3) 
 
 ### [Haz **Click aquí** para programar en Python](https://repl.it/languages/python3) 
 
-Un numero binario, siempre debe acompañarse primero de un **0** y una **b** ( correspondiente a binario ) seguida de la secuencia de **1's** y **0's** de nuestro ejemplo.
+Un **numero binario**, siempre debe acompañarse primero de un **0** y una **b** ( correspondiente a **binario** ) seguida de la secuencia de **1's** y **0's** de nuestro ejemplo.
 Para hacer aparecer por pantalla la codificación de un numero hay que llamar a la función **print** con la codificación del numero con el metodo [**bin()**](https://wiki.python.org/moin/BitManipulation). Puedes observar a qué número se corresponde con la función **str()**. ¿Cuál es el número máximo que puedes obtener en un byte?
 
 ```python
@@ -80,9 +80,9 @@ Si el resultado es correcto, ya has ganado **10 puntos**.
 
 ## Desplazando bits
 
-Dentro de una secuencia de bits podemos desplazar todos los bits hacia la izquierda o hacia la derecha un número determinado de veces. Para ello usaremos el operador de desplazamiento de bits **<<** o **>>**.
+Dentro de una secuencia de bits podemos desplazar todos los bits hacia la izquierda o hacia la derecha un número determinado de veces. Para ello usaremos el operador de **desplazamiento de bits** **<<** o **>>**.
 
-Este desplazamiento es el equivalente a multiplicar o dividir por una potencia de 2 elevado a n, siendo n el numero de desplazamientos.
+Este desplazamiento es el equivalente a multiplicar o dividir por una potencia de **2 elevado a n**, siendo **n** el numero de desplazamientos.
 
 ```python
 import numpy as np
@@ -97,7 +97,7 @@ Hay que tener en cuenta que en la lista de bits, la posición que ocupa el bit q
 
 ## Contando bits
 
-Para contar bits, una acción que podemos realizar es realizar un bucle y desplazar el bit hacia la derecha hasta que se acaba. 
+Para contar bits, una acción que podemos realizar es realizar un **bucle** y desplazar el bit hacia la derecha hasta que se acaba. 
 
 
 ```python
@@ -111,11 +111,11 @@ while (code): #Mientras el numero binario no sea cero ejecuta el bucle
   code >>= 1
 print( 'Total de bits activos: '+count )
 ```
-Si prestamos atención, este programa afecta al valor total de nuestro código, ya que vamos eleminando información sobreescribiendo sobre él.
+Si prestamos atención, este programa afecta al valor total de nuestro código, ya que vamos eliminando información sobreescribiendo sobre él.
 
 Muchas veces es útil desarrollar una función que nos pueda devolver el resultado que estamos buscando sin alterar esta variable.
 
-Para crear una función en Python, debemos especificar la palabra **def** seguida de un nombre para la función. 
+Para crear una **función en Python**, debemos especificar la palabra **def** seguida de un nombre para la función. 
 
 ```python
 import numpy as np
@@ -132,7 +132,7 @@ def  contarBits(n):
 #Ejecutamos la funcion anterior asociada a nuestro numero
 print( 'Total de bits activos: '+ str( contarBits( code ) ))
 ```
-Existe un formato de ejecución denominado recursivo. Este modelo permite ejecutarse una función a si misma hasta que deja de cumplir una condición determinada.
+Existe un formato de **ejecución de funciones** denominado **recursivo**. Este modelo permite ejecutarse una función a si misma hasta que deja de cumplir una condición determinada.
 Aunque pueda parecer más difícil es una forma inteligente de encapsular ciertas operaciones para obtener un resultado más rápido.
 
 ```python
@@ -150,19 +150,6 @@ def  contarBits(n):
 #Ejecutamos la funcion anterior asociada a nuestro numero
 print( 'Total de bits activos: '+ str( contarBits( code ) ))
 ```
-
-## El bit más significativo [MSB Most Significant Bit](https://es.wikipedia.org/wiki/Bit_m%C3%A1s_significativo)
-
-MSB ( Most Significant Bit) es el bit que de acuerdo con su posición, se encuentra más a la izquierda.
-Los bits específicos dentro de un número binario, a cada bit se le asigna un número de bit, creando un rango desde cero a n.
-![Índice de un bit](/BitWise/src/IndexSampleByte.jpg)
-
-
-
-## El bit menos significativo [LSB Least Significant Bit](https://es.wikipedia.org/wiki/Bit_menos_significativo)
-
-
-Ahora vamos a crear una secuencia de bits más larga. Si utilizamos dos Bytes, entonces tendremos 16 bits para rellenar. Nuestro objetivo es contar cuantos bits activos tenemos en nuestra lista de unos y ceros.
 
 ## Bit Color
 
@@ -220,7 +207,7 @@ print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) )
 ```
 Para realizar este ejercicio, hay que saber desplazar los bits y eliminar la parte que no nos interesa del código. Partimos de un numero de 32 bits como aparece en la figura y hemos de realizar la siguiente conversión.
 
-![RGB888](/BitWise/src/RGB888.jpg)
+![RGB888](/BitWise/src/RGB888.png)
 
 Recuerda que no existe una única solución.
 
@@ -245,20 +232,20 @@ b = 67
 
 #Función que transforma codificación RGB en bits
 def  BitColor( r, g, b ): 
-	return r | g | b
+	return (r >> 3)<< 11 | (g >>2) << 5 | (b >> 3 )
     	
 #Ejecutamos la funcion anterior asociada a nuestro numero
 code = BitColor( r, g, b )
 print( 'RGB565 Color: ' + bin( code) ) 
 ```
 
-![RGB565](/BitWise/src/RGB565.jpg)
+![RGB565](/BitWise/src/RGB565.png)
 
-Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits.
+Ahora nuestro objetivo es crear un programa que nos pueda proporcionar las 3 componentes RGB del color a partir de nuestra codificación en bits. ¿Nos saldrán los mismos valores que en la codificación **RGB888** ?
 
 ```python
 import numpy as np
-code = np.uint16( 0b111111110111100001000011 )
+code = np.uint16( 0b1111101111001000 )
 
 r = 0
 g = 0
@@ -266,9 +253,19 @@ b = 0
 
 # Escribe la instrucción para obtener los valores anteriores a partir de la codificación de color binaria
 #
+r = code >> 11
+print( bin(code) )
+code = code & 0b11111111111
+print( bin(code) )
+g = code >> 6
+code = code & 0b111111
+b = code
+
     	
 print( 'Color - R: ' + str( r )+ ' G: '+str( g )+ ' B: '+ str( b ) ) 
 ```
+
+La respuesta es que no nos pueden dar los mismos valores que en el modo de codificación RGB888, ya que perdemos bits de información, por lo que esos bits perdidos los desconocemos para determinar el valor total de cada componente de color.
 
 ## Conversor Hexadecimal
 
@@ -294,3 +291,18 @@ La respuesta reside en que [**nuestro ojo humano es mas sensible en la variació
 Al disponer de un bit adicional, podemos guardar más información contenida en el verde con respecto a los otros dos colores y adaptar las imágenes con mayor calidad adaptada a nuestros ojos.
 
 ![Color Cones Response](/BitWise/src/colorCones.png)
+
+
+
+## El bit más significativo [MSB Most Significant Bit](https://es.wikipedia.org/wiki/Bit_m%C3%A1s_significativo)
+
+**MSB ( Most Significant Bit)** es el bit que de acuerdo con su posición, se encuentra más a la izquierda.
+Los bits específicos dentro de un número binario, a cada bit se le asigna un número de bit, creando un rango desde cero a n.
+![Índice de un bit](/BitWise/src/IndexSampleByte.jpg)
+
+
+
+## El bit menos significativo [LSB Least Significant Bit](https://es.wikipedia.org/wiki/Bit_menos_significativo)
+
+
+Ahora vamos a crear una secuencia de bits más larga. Si utilizamos dos Bytes, entonces tendremos 16 bits para rellenar. Nuestro objetivo es contar cuantos bits activos tenemos en nuestra lista de unos y ceros.
