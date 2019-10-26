@@ -4,18 +4,21 @@ Para ello, vamos a empezar a programar con una librería para crear nuestros pro
 
 Primero vamos a especificar un **objetivo**, acto seguido plantearemos cómo vamos a llevarlo a cabo y finalmente desarrollaremos la información necesaria para cada prueba.
 
+![Open Pixel Project](src/open_pixel_project.png) 
+
 ![Open Pixel Project](src/open_pixel_project.png)
 
 ## Objetivo
 
-El objetivo que queremos desarrollar es crear una serie de **algoritmos de tratamiento de imagen**.
-Estos objetivos irán aumentando su complejidad a medida que avanzemos, por lo que es recomendable revisar la documentación de las lecciones previas.
+El objetivo que queremos desarrollar es crear un fondo y un personaje con el que podemos interactuar para desarrollar nuestro videojuego personalizado.
+Hay que tener en cuenta que una vez quqe hayamos hecho un programa podremos cambiar los personajes, el fondo y los eventos de juego para realizar distintas dinámicas. 
 
-Pixel by Pixel
-	1. Canvas
-	2. Cargar imágenes
-	3. Inputs y control en bucle
-	4. Read Color Pixels
+### Pixel by Pixel
+
+1. Canvas
+2. Cargar imágenes
+3. Inputs y control en bucle
+4. Read Color Pixels
 
 ## Cómo llevarlo a cabo
 
@@ -23,7 +26,7 @@ Para crear nuestros programas sin necesidad de instalar nada, podemos acceder a 
 
 - [Python](https://repl.it/languages/python3) 
 
-Para cada ejercicio, solamente hay que acceder al **código de prueba** que tenemos en este directorio.
+Para cada ejercicio, solamente hay que acceder al [**código de prueba**](https://github.com/ZaragozaMakerSpace/CoderDojo2019/blob/master/PygameColor/1_loadImage.py) que tenemos en este directorio. Tambien podemos descargar los recursos de imagen desde esta carpeta (https://github.com/ZaragozaMakerSpace/CoderDojo2019/tree/master/PygameColor/src). 
 Copiamos y pegamos su contenido y en los comentarios encontraremos la prueba que tenemos que seguir paso a paso.
 
 En cada código de prueba hay comentarios que deberán aparecer en gris y estarán precedidos del símbolo de almohadilla **\#**.
@@ -89,15 +92,51 @@ Durante esta sección solamente tendrás que tener en cuenta que el formato de e
 
 Una vez que sepamos qué significa cada linea, deberemos buscar e incluir nuestras propias imágenes a nuestro proyecto y cargarlas.
 
-Para ello, vamos a buscar 3 formatos distintos de imagen.
-- Una imagen de dibujo vectorial en el que no haya cambios de color entre las formas del dibujo.
-- Una imagen de dibujo con defectos en el procesado de pixeles.
-- Una imagen real con amplia gama de colores.
-
-Para finalizar esta prueba y ya que sabemos como redimensionar imágenes, queremos hacer una zona inferior de **100 pixeles de alto** en la que poder visualizar algunos resultados para los siguiente ejercicios. La pantalla de nuestro dibujo deberá aparecer como en la siguiente imagen.
-
 ![ZMS_Image_Resizing](src/doc/imageresizing.png)
 
+
+Para finalizar esta parte de aprendizaje, podemos comenzar a realizar las pruebas
+
+# Redimensionar el fondo
+
+Muchas veces nos podemos encontrar con que la imagen de fondo que hemos escogido no tiene las mismas dimensiones que nuestra pantalla. Para ello utilizaremos el metodo [transform.scale()](https://www.pygame.org/docs/ref/transform.html#pygame.transform.scale)
+
+```python
+size = [800, 500]
+background_image = pygame.transform.scale(background_image, size )
+```
+# Cargar personajes
+
+Ahora deberemos cargar nuestros personaje, pero deberemos especificar las posiciones sobre el que vamos a iniciar el estado de nuestro jugador. A veces es útil crear variables para situar la posición del personaje de forma dinámica dentro del bucle.
+
+```python
+player = pygame.image.load("src/Player/pilot.png").convert()
+
+	posX = 0;
+	posY = 0;
+	screen.blit(player , [ posX, posY ]) 
+```
+
+# Mover a nuestro jugador
+
+Para mover a nuestro personaje, tendremos que actualizar las variables de posición definiendo los eventos de teclado pertinentes.
+
+En este caso actualizaremos la dirección vertical con las flechas de arriba y abajo, y la horizontal con las flechas de izquierda y derecha.
+```python
+	for event in pygame.event.get():
+
+		key = pygame.key.get_pressed()
+		if key[pygame.K_DOWN]: 
+			posY = posY + 1
+		if key[pygame.K_UP]:
+			posY = posY - 1
+
+		if key[pygame.K_RIGHT]: 
+			posX = posX + 1
+		if key[pygame.K_LEFT]:
+			posX = posX - 1
+```
+¿Cómo podemos hacer para que se mueva más rápido?
 
 ## Pixel by Pixel
 
@@ -115,8 +154,11 @@ for event in pygame.event.get():
 		pygame.quit() 
 		sys.exit()
 ```
+Este ejercicio final consiste en llevar nuestro personaje a las coordenadas donde hemos clicado.
 
-# Read Pixels
+**¿Serás capaz de conseguirlo?**
+
+# Extra exercise - Read Color Pixels
 Para obtener el color de cada pixel sobre el que presionamos deberemos ejecutar la siguiente función [**get_at()**](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_at) introduciendo las coordenadas sobre las que hemos presionado el ratón.
 
 ```python
@@ -127,13 +169,3 @@ El [color](https://www.pygame.org/docs/ref/color.html) se representa con cuatro 
 
 Con la función de cada superficie como puede ser nuestra imagen o [screen.get_at( x, y )](https://www.pygame.org/docs/ref/surface.html#pygame.Surface.get_at) podemos obtener el color de nuestro pixel.
 
-Nuestro objetivo es crear un cuadrado de **100 pixeles de ancho y 100 de alto** en la parte inferior de nuestra imagen y situada en el centro respecto de su ancho para visualizar el color que hemos seleccionado.
-
-Para ello usaremos dos funciones. La primera define el origen de la esquina superior izquierda ( x, y ) y la anchura y altura del rectangulo ( w, h ). Para buscar mas documentación se puede acceder al siguiente [enlace](https://www.pygame.org/docs/ref/rect.html).
-Una vez creado lo podemos dibujar en la pantalla con [pygame.draw.rect()](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect)
-
-```python
-rectangle  = pygame.Rect( x, y, w, h)
-pygame.draw.rect( screen, color , rectangle )
-```
-Para conocer la posicion y dimensiones, recomendamos hacerse un dibujo en papel crear una variable para el tamaño del cuadrado para operar matematicamente entre las distintas componentes.

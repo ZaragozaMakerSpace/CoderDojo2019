@@ -12,7 +12,7 @@ size = [800, 500]
 screen = pygame.display.set_mode( size , pygame.RESIZABLE)
 
 #Cargamos la imagen y obtenemos su tamanio con el atributo size
-## Puedes cambiar la ruta de la imagen por otra que mas te guste
+## Puedes cambiar la ruta de la imagen por otra que mas te guste.
 #IMPORTANTE - Hay que dirigir correctamente la ruta
 background_image = pygame.image.load("src/mariogrid.png").convert()
 
