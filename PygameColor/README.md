@@ -4,6 +4,8 @@ Para ello, vamos a empezar a programar con una librería para crear nuestros pro
 
 Primero vamos a especificar un **objetivo**, acto seguido plantearemos cómo vamos a llevarlo a cabo y finalmente desarrollaremos la información necesaria para cada prueba.
 
+![Open Pixel Project](src/open_pixel_project.png)
+
 ## Objetivo
 
 El objetivo que queremos desarrollar es crear una serie de **algoritmos de tratamiento de imagen**.

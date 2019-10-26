@@ -11,23 +11,14 @@ pygame.display.set_caption('Pygame Load Image')
 size = [800, 500]
 screen = pygame.display.set_mode( size , pygame.RESIZABLE)
 
-#Cargamos la imagen y obtenemos su tamanio con la funcino size
+#Cargamos la imagen y obtenemos su tamanio con el atributo size
 ## Puedes cambiar la ruta de la imagen por otra que mas te guste
 #IMPORTANTE - Hay que dirigir correctamente la ruta
 background_image = pygame.image.load("src/mariogrid.png").convert()
 
-#Definimos el tamaño de nuestra interfaz, y cargamos el tamanio de la ventana
-#palete_size = ( 120 , 120 )
-#size = background_image.get_rect().size
-#total_size = background_image.get_rect().size[0], background_image.get_rect().size[1] + palete_size[1]
-
-#screen = pygame.display.set_mode( total_size  , pygame.RESIZABLE)
-
-
-
 while True: # main game loop 
 
-	#Muestra la imagen 
+	#Preparamos la imagen que queremos que aparezca 
 	screen.blit( background_image, [0,0] )
 
 
@@ -40,4 +31,6 @@ while True: # main game loop
 		if event.type == QUIT  or (event.type == KEYDOWN and event.key == K_ESCAPE): 
 			pygame.quit() 
 			sys.exit()
+
+	#Actualiza la pantalla
 	pygame.display.update()
