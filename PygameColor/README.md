@@ -6,8 +6,6 @@ Primero vamos a especificar un **objetivo**, acto seguido plantearemos cómo vam
 
 ![Open Pixel Project](src/open_pixel_project.png) 
 
-![Open Pixel Project](src/open_pixel_project.png)
-
 ## Objetivo
 
 El objetivo que queremos desarrollar es crear un fondo y un personaje con el que podemos interactuar para desarrollar nuestro videojuego personalizado.
@@ -41,7 +39,7 @@ En este caso vamos a introducir una imagen de fondo, pero primero hay que comenz
 1. Importar las librerías necesarias.
 2. Crear las variables del programa.
 3. Iniciar el entorno de pygame definiendo el tamaño de nuestra ventana de videojuegos.
-4. Cargar una imagen desde un directorio contenido en nuestro proyecto. En nuestro caso, las imagenes estan almacenadas en una carpeta llamada **src**para salir del juego.
+4. Cargar una imagen desde un directorio contenido en nuestro proyecto. En nuestro caso, las imagenes estan almacenadas en una carpeta llamada **src**.
 
 Para importar las librerías necesarias, solamente tendremos que definir el nombre de **pygame**, precedido de la palabra **import**. A veces es útil cargar algunas extensiones de la librería. En este caso cargaremos algunas variables locales que nos ayudaran a definir el nombre de algunas teclas.
 A partir de este momento, podremos utilizar todos los métodos de la librería documentadas en la página oficial de [**pygame**](https://www.pygame.org/docs/)
